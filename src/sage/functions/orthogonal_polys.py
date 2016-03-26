@@ -317,7 +317,7 @@ from sage.calculus.calculus import maxima
 
 
 from sage.symbolic.ring import SR, is_SymbolicVariable
-from sage.symbolic.function import BuiltinFunction
+from sage.symbolic.function import BuiltinFunction, GinacFunction
 from sage.symbolic.expression import Expression
 from sage.functions.other import factorial, binomial
 from sage.structure.all import parent
@@ -1238,7 +1238,7 @@ def gen_legendre_Q(n, m, x):
         return ((n-m+1)*x*gen_legendre_Q(n,m-1,x)-(n+m-1)*gen_legendre_Q(n-1,m-1,x))/sqrt(1-x**2)
 
 
-def hermite(n, x):
+class Func_hermite(GinacFunction):
     """
     Returns the Hermite polynomial for integers `n > -1`.
 
@@ -1281,12 +1281,20 @@ def hermite(n, x):
         ...
         ValueError: n must be greater than -1, got n = -7
     """
-    if not (n > -1):
-        raise ValueError("n must be greater than -1, got n = {0}".format(n))
+    def __init__(self):
+        r"""
+        Init method for the Hermite polynomials.
 
-    _init()
-    return sage_eval(maxima.eval('hermite(%s,x)'%ZZ(n)), locals={'x':x})
+        EXAMPLES::
 
+            sage: loads(dumps(hermite))
+            hermite
+        """
+        GinacFunction.__init__(self, "hermite", nargs=2, latex_name=r"H",
+                conversions={'maxima':'hermite', 'mathematica':'HermiteH',
+                    'maple':'HermiteH'})
+
+hermite = Func_hermite()
 
 def jacobi_P(n, a, b, x):
     r"""
