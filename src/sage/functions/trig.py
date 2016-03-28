@@ -50,9 +50,9 @@ class Function_sin(GinacFunction):
             sage: cos(pi/8)
             1/2*sqrt(sqrt(2) + 2)
             sage: cos(pi/10)
-            1/2*sqrt(1/2*sqrt(5) + 5/2)
+            1/4*sqrt(2*sqrt(5) + 10)
             sage: cos(pi/12)
-            1/12*sqrt(6)*(sqrt(3) + 3)
+            1/4*sqrt(6) + 1/4*sqrt(2)
             sage: cos(pi/15)
             1/8*sqrt(5) + 1/4*sqrt(3/2*sqrt(5) + 15/2) - 1/8
             sage: cos(pi/24)
@@ -62,11 +62,11 @@ class Function_sin(GinacFunction):
             sage: tan(pi/8)
             sqrt(2) - 1
             sage: tan(pi/10)
-            sqrt(-2/5*sqrt(5) + 1)
+            1/5*sqrt(-10*sqrt(5) + 25)
             sage: tan(pi/16)
             -sqrt(2) + sqrt(2*sqrt(2) + 4) - 1
             sage: tan(pi/20)
-            sqrt(5) - 1/2*sqrt(8*sqrt(5) + 20) + 1
+            sqrt(5) - sqrt(2*sqrt(5) + 5) + 1
             sage: tan(pi/24)
             sqrt(6) - sqrt(3) + sqrt(2) - 2
 
