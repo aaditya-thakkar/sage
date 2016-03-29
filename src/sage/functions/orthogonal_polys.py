@@ -1263,7 +1263,7 @@ class Func_hermite(GinacFunction):
         8*y^6 - 12*y^2
         sage: w = var('w')
         sage: hermite(3,2*w)
-        8*(8*w^2 - 3)*w
+        64*w^3 - 24*w
 
     Check that :trac:`17192` is fixed::
 
@@ -1274,12 +1274,12 @@ class Func_hermite(GinacFunction):
         sage: hermite(-1,x)
         Traceback (most recent call last):
         ...
-        ValueError: n must be greater than -1, got n = -1
+        RuntimeError: hermite_eval: The index n must be a nonnegative integer
 
         sage: hermite(-7,x)
         Traceback (most recent call last):
         ...
-        ValueError: n must be greater than -1, got n = -7
+        RuntimeError: hermite_eval: The index n must be a nonnegative integer
     """
     def __init__(self):
         r"""
