@@ -1257,7 +1257,7 @@ class Func_hermite(GinacFunction):
         40
         sage: S.<y> = PolynomialRing(RR)
         sage: hermite(3,y)
-        8.00000000000000*y^3 - 12.0000000000000*y
+        8*y^3 - 12*y
         sage: R.<x,y> = QQ[]
         sage: hermite(3,y^2)
         8*y^6 - 12*y^2
