@@ -47,6 +47,8 @@ class Function_sin(GinacFunction):
             1/4*sqrt(-2*sqrt(6) - 2*sqrt(2) + 8)
             sage: sin(pi/30)
             -1/8*sqrt(5) + 1/4*sqrt(-3/2*sqrt(5) + 15/2) - 1/8
+            sage: sin(104*pi/105)
+            sin(1/105*pi)
             sage: cos(pi/8)
             1/2*sqrt(sqrt(2) + 2)
             sage: cos(pi/10)
@@ -57,6 +59,8 @@ class Function_sin(GinacFunction):
             1/8*sqrt(5) + 1/4*sqrt(3/2*sqrt(5) + 15/2) - 1/8
             sage: cos(pi/24)
             1/4*sqrt(2*sqrt(6) + 2*sqrt(2) + 8)
+            sage: cos(104*pi/105)
+            -cos(1/105*pi)
             sage: tan(pi/5)
             sqrt(-2*sqrt(5) + 5)
             sage: tan(pi/8)
@@ -69,6 +73,14 @@ class Function_sin(GinacFunction):
             sqrt(5) - sqrt(2*sqrt(5) + 5) + 1
             sage: tan(pi/24)
             sqrt(6) - sqrt(3) + sqrt(2) - 2
+            sage: tan(104*pi/105)
+            -tan(1/105*pi)
+            sage: cot(104*pi/105)
+            -cot(1/105*pi)
+            sage: sec(104*pi/105)
+            -sec(1/105*pi)
+            sage: csc(104*pi/105)
+            csc(1/105*pi)
 
             sage: all(sin(rat*pi).n(200)-sin(rat*pi,hold=True).n(200) < 1e-30 for rat in [1/5,2/5,1/30,7/30,11/30,13/30,1/8,3/8,1/24,5/24,7/24,11/24])
             True
